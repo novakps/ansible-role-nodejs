@@ -1,0 +1,5 @@
+---
+- name: Ensure Nodejs is installed
+  homebrew:
+    name: node
+    state: present
