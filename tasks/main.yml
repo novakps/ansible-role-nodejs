@@ -17,8 +17,9 @@
   file:
     path: "{{ npm_config_prefix }}"
     owner: "{{ nodejs_install_npm_user }}"
-    group: "{{ nodejs_install_npm_group | nodejs_install_npm_user }}"
+    group: "{{ nodejs_install_npm_user }}"
     state: directory
+  when: ansible_os_family != 'Darwin'
 
 - name: Add npm_config_prefix bin directory to global $PATH.
   template:
